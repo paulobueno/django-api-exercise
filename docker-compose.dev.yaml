@@ -1,0 +1,12 @@
+version: '3'
+services:
+  django:
+    build:
+      context: ./django
+      dockerfile: Dockerfile.dev
+    image: django:dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./django:/app
+
