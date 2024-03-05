@@ -1,6 +1,7 @@
 version: '3'
 services:
   django:
+    container_name: django
     build:
       context: ./django
       dockerfile: Dockerfile.dev
@@ -9,4 +10,17 @@ services:
       - "8000:8000"
     volumes:
       - ./django:/app
+    depends_on:
+      - db
 
+  db:
+    container_name: db
+    image: postgres:16.2
+    environment:
+      POSTGRES_DB: app-database
+      POSTGRES_USER: db-user
+      POSTGRES_PASSWORD: db-user-pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql:/var/lib/postgresql
