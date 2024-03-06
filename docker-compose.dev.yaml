@@ -12,15 +12,25 @@ services:
       - ./django:/app
     depends_on:
       - db
+    environment:
+      - POSTGRES_DB=app-database
+      - POSTGRES_USER=db-user
+      - POSTGRES_PASSWORD=db-user-pass
+      - DJANGO_SECRET_KEY=abcd
+      - DJANGO_DEBUG=True
+
 
   db:
     container_name: db
     image: postgres:16.2
     environment:
-      POSTGRES_DB: app-database
-      POSTGRES_USER: db-user
-      POSTGRES_PASSWORD: db-user-pass
+      - POSTGRES_DB=app-database
+      - POSTGRES_USER=db-user
+      - POSTGRES_PASSWORD=db-user-pass
     ports:
       - "5432:5432"
     volumes:
-      - ./postgresql:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
