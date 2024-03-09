@@ -4,7 +4,7 @@ services:
     container_name: django
     build:
       context: ./django
-      dockerfile: Dockerfile.dev
+      dockerfile: django/Dockerfile.dev.yaml
     image: django:dev
     ports:
       - "8000:8000"
