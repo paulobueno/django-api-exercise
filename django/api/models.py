@@ -3,8 +3,14 @@ import random
 import string
 
 
+def generate_property_code():
+    while True:
+        code = ''.join(random.choices(string.ascii_uppercase, k=4) + random.choices(string.digits, k=4))
+        if not Property.objects.filter(property_code=code).exists():
+            return code
+
 class Property(models.Model):
-    friendly_id = models.CharField(max_length=100, unique=True, db_index=True)
+    property_code = models.CharField(max_length=8, unique=True, default=generate_property_code, db_index=True)
     guests_max_number = models.PositiveIntegerField()
     bathrooms_quantity = models.PositiveIntegerField()
     accepts_animals = models.BooleanField(default=False)
@@ -14,7 +20,7 @@ class Property(models.Model):
     update_timestamp = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.friendly_id
+        return self.property_code
 
     class Meta:
         ordering = ['-update_timestamp']
@@ -29,7 +35,7 @@ class Listing(models.Model):
     update_timestamp = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Listing for {self.property.friendly_id} on {self.published_platform}"
+        return f"Listing for {self.property.property_code} on {self.published_platform}"
 
     class Meta:
         ordering = ['-update_timestamp']
@@ -53,7 +59,7 @@ class Booking(models.Model):
     update_timestamp = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Booking {self.booking_code} for {self.listing.property.friendly_id}"
+        return f"Booking {self.booking_code} for {self.listing.property.property_code}"
 
     class Meta:
         ordering = ['-update_timestamp']
