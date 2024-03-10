@@ -1,0 +1,236 @@
+[
+{
+  "model": "api.property",
+  "pk": 2,
+  "fields": {
+    "property_code": "OONL3703",
+    "guests_max_number": 4,
+    "bathrooms_quantity": 2,
+    "accepts_animals": true,
+    "cleaning_cost": "0.07",
+    "activation_date": "2024-03-09",
+    "creation_timestamp": "2024-03-09T18:30:36.879Z",
+    "update_timestamp": "2024-03-10T16:47:42.215Z"
+  }
+},
+{
+  "model": "api.property",
+  "pk": 3,
+  "fields": {
+    "property_code": "TFCB9578",
+    "guests_max_number": 4,
+    "bathrooms_quantity": 1,
+    "accepts_animals": false,
+    "cleaning_cost": "100.00",
+    "activation_date": "2024-03-10",
+    "creation_timestamp": "2024-03-10T18:19:34.393Z",
+    "update_timestamp": "2024-03-10T18:19:34.393Z"
+  }
+},
+{
+  "model": "api.property",
+  "pk": 4,
+  "fields": {
+    "property_code": "XDHJ5901",
+    "guests_max_number": 15,
+    "bathrooms_quantity": 4,
+    "accepts_animals": true,
+    "cleaning_cost": "200.00",
+    "activation_date": "2024-03-13",
+    "creation_timestamp": "2024-03-10T18:20:08.281Z",
+    "update_timestamp": "2024-03-10T18:20:08.281Z"
+  }
+},
+{
+  "model": "api.property",
+  "pk": 5,
+  "fields": {
+    "property_code": "GZLQ3197",
+    "guests_max_number": 23,
+    "bathrooms_quantity": 5,
+    "accepts_animals": false,
+    "cleaning_cost": "200.00",
+    "activation_date": "2024-03-19",
+    "creation_timestamp": "2024-03-10T18:20:34.890Z",
+    "update_timestamp": "2024-03-10T18:20:34.890Z"
+  }
+},
+{
+  "model": "api.property",
+  "pk": 6,
+  "fields": {
+    "property_code": "MAGA8966",
+    "guests_max_number": 8,
+    "bathrooms_quantity": 2,
+    "accepts_animals": false,
+    "cleaning_cost": "100.00",
+    "activation_date": "2024-03-12",
+    "creation_timestamp": "2024-03-10T18:21:19.935Z",
+    "update_timestamp": "2024-03-10T18:21:19.935Z"
+  }
+},
+{
+  "model": "api.listing",
+  "pk": 2,
+  "fields": {
+    "property": 2,
+    "published_platform": "abcde",
+    "published_platform_fee": "0.05",
+    "creation_timestamp": "2024-03-09T18:31:24.238Z",
+    "update_timestamp": "2024-03-09T18:31:24.238Z"
+  }
+},
+{
+  "model": "api.listing",
+  "pk": 3,
+  "fields": {
+    "property": 4,
+    "published_platform": "airbnb",
+    "published_platform_fee": "5.00",
+    "creation_timestamp": "2024-03-10T18:21:51.144Z",
+    "update_timestamp": "2024-03-10T18:21:51.144Z"
+  }
+},
+{
+  "model": "api.listing",
+  "pk": 4,
+  "fields": {
+    "property": 2,
+    "published_platform": "airbnb",
+    "published_platform_fee": "10.00",
+    "creation_timestamp": "2024-03-10T18:21:58.421Z",
+    "update_timestamp": "2024-03-10T18:21:58.421Z"
+  }
+},
+{
+  "model": "api.listing",
+  "pk": 5,
+  "fields": {
+    "property": 5,
+    "published_platform": "booking.com",
+    "published_platform_fee": "20.00",
+    "creation_timestamp": "2024-03-10T18:22:11.554Z",
+    "update_timestamp": "2024-03-10T18:22:11.554Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 2,
+  "fields": {
+    "listing": 2,
+    "booking_code": "KWPL9854",
+    "checkin_date": "2024-03-10",
+    "checkout_date": "2024-03-12",
+    "total_value": "100.00",
+    "comments": "abcde",
+    "guests_quantity": 10,
+    "creation_timestamp": "2024-03-10T17:16:39.962Z",
+    "update_timestamp": "2024-03-10T17:16:39.962Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 3,
+  "fields": {
+    "listing": 5,
+    "booking_code": "KPIU9305",
+    "checkin_date": "2024-03-18",
+    "checkout_date": "2024-03-29",
+    "total_value": "250.00",
+    "comments": "abcde",
+    "guests_quantity": 4,
+    "creation_timestamp": "2024-03-10T18:22:58.782Z",
+    "update_timestamp": "2024-03-10T18:22:58.782Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 4,
+  "fields": {
+    "listing": 2,
+    "booking_code": "CEPH6550",
+    "checkin_date": "2024-03-12",
+    "checkout_date": "2024-03-29",
+    "total_value": "150.00",
+    "comments": "aaaaa",
+    "guests_quantity": 8,
+    "creation_timestamp": "2024-03-10T18:23:46.046Z",
+    "update_timestamp": "2024-03-10T18:23:46.046Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 5,
+  "fields": {
+    "listing": 3,
+    "booking_code": "JCMQ6592",
+    "checkin_date": "2024-04-01",
+    "checkout_date": "2024-04-10",
+    "total_value": "500.00",
+    "comments": "asdasd",
+    "guests_quantity": 5,
+    "creation_timestamp": "2024-03-10T18:25:05.891Z",
+    "update_timestamp": "2024-03-10T18:25:05.891Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 6,
+  "fields": {
+    "listing": 4,
+    "booking_code": "OGYY7109",
+    "checkin_date": "2024-03-22",
+    "checkout_date": "2024-04-25",
+    "total_value": "850.00",
+    "comments": "asdasd",
+    "guests_quantity": 12,
+    "creation_timestamp": "2024-03-10T18:25:33.016Z",
+    "update_timestamp": "2024-03-10T18:25:33.016Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 7,
+  "fields": {
+    "listing": 4,
+    "booking_code": "DFQC7391",
+    "checkin_date": "2024-03-12",
+    "checkout_date": "2024-03-31",
+    "total_value": "600.00",
+    "comments": "asdasd",
+    "guests_quantity": 5,
+    "creation_timestamp": "2024-03-10T18:26:22.597Z",
+    "update_timestamp": "2024-03-10T18:26:22.597Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 8,
+  "fields": {
+    "listing": 2,
+    "booking_code": "MYTW4986",
+    "checkin_date": "2024-03-13",
+    "checkout_date": "2024-03-31",
+    "total_value": "130.00",
+    "comments": "qweqwe",
+    "guests_quantity": 5,
+    "creation_timestamp": "2024-03-10T18:26:40.675Z",
+    "update_timestamp": "2024-03-10T18:26:40.675Z"
+  }
+},
+{
+  "model": "api.booking",
+  "pk": 9,
+  "fields": {
+    "listing": 2,
+    "booking_code": "UZSP2061",
+    "checkin_date": "2024-03-21",
+    "checkout_date": "2024-03-30",
+    "total_value": "200.00",
+    "comments": "qweqwe",
+    "guests_quantity": 3,
+    "creation_timestamp": "2024-03-10T18:27:03.286Z",
+    "update_timestamp": "2024-03-10T18:27:03.286Z"
+  }
+}
+]
