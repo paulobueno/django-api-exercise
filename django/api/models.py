@@ -2,6 +2,8 @@ from django.db import models
 import random
 import string
 
+from rest_framework.exceptions import ValidationError
+
 
 def generate_property_code():
     while True:
@@ -57,6 +59,14 @@ class Booking(models.Model):
     guests_quantity = models.PositiveIntegerField()
     creation_timestamp = models.DateTimeField(auto_now_add=True)
     update_timestamp = models.DateTimeField(auto_now=True)
+
+    def clean(self):
+        if self.checkin_date and self.checkout_date and self.checkin_date > self.checkout_date:
+            raise ValidationError("Check-in date cannot be greater than the checkout date.")
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Booking {self.booking_code} for {self.listing.property.property_code}"
